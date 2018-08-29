@@ -3,6 +3,8 @@
 yzmiscf
 =======
 
+    use_cran_badge()
+
 The goal of yzmiscf is to ...
 
 Installation
