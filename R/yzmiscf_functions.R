@@ -15,3 +15,13 @@ dogs_over_cats <- function(agree=TRUE){
     print("Try again.")
   }
 }
+
+
+newf <- function(agree=TRUE){
+  if(agree==TRUE){
+    print("Woof woof!!!")
+  }
+  else {
+    print("Try again.")
+  }
+}
