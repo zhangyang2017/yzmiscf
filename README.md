@@ -2,9 +2,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 yzmiscf
 =======
-
-    use_cran_badge()
-
+![](https://img.shields.io/badge/personal-project-pink.svg?style=flat)
 The goal of yzmiscf is to ...
 
 Installation
