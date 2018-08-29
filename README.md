@@ -2,8 +2,9 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 yzmiscf
 =======
-![](https://img.shields.io/badge/personal-project-pink.svg?style=flat)
-The goal of yzmiscf is to ...
+![](https://img.shields.io/badge/personal-project-hotpink.svg?style=flat)
+
+The goal of yzmiscf is to have an easy access to a list of functions I use daily.
 
 Installation
 ------------
