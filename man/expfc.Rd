@@ -21,7 +21,7 @@ This function allows me to take cleaned PCR Ct values of target genes,
 expfc uses the 2-ΔΔCT method to calculate fold change for relative gene expression
     data obtained from real-time quantitative PCR. It returns a list of three objects: the
     ΔCt values for control, the complete fold change table and a quick peek of common
-    statistics summary mean, median and sd.
+    statistics summary mean, median, sd and IQR.
 }
 \references{
 Livak KJ, Schmittgen TD. Analysis of relative gene expression data using real-time quantitative PCR and the 2- ΔΔCT method. Methods. Elsevier; 2001;25: 402–408.

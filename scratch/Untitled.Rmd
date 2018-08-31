@@ -121,3 +121,18 @@ plot.foldch <- function(expression){
     geom_boxplot() +
     geom_jitter(width = 0.12)
 }
+
+
+
+```{r}
+library(hexSticker)
+sticker(expression(plot(cars, cex=.5, cex.axis=.5, mgp=c(0,.3,0), xlab="", ylab="")),
+        package="hexSticker", p_size=8, s_x=1, s_y=.8, s_width=1.2, s_height=1,
+        filename="inst/figures/baseplot.png")
+
+imgurl <- "file:///Users/yangzhang/Downloads/cleaning.png"
+sticker(imgurl, package="yzmiscf", p_y = 1.5, p_size=8, s_x=1, s_y=.8, s_width=.5,
+        h_color = "#c5454c", h_fill = "#fbf9eb", p_color = "#c5454c",
+        filename="/Users/yangzhang/Desktop/package.png")
+```
+
