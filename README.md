@@ -15,3 +15,8 @@ You can install yzmiscf from github with:
 # install.packages("devtools")
 devtools::install_github("zhangyang2017/yzmiscf")
 ```
+
+Contents
+------------
+1. cleanme
+2. expfc
