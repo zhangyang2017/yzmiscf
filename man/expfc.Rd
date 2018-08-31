@@ -4,17 +4,27 @@
 \alias{expfc}
 \title{002. Gene expression fold changes.}
 \usage{
-expfc(.clean.df, dct_cont)
+expfc(.clean.df, control, ref_col)
 }
 \arguments{
-\item{cleaned_PCR_Ct_values}{A tbl or a df, can be result from cleanme function.}
+\item{clean.df}{A tbl or a df, can be result from cleanme function.}
+
+\item{control}{The control treatment: character.}
+
+\item{ref_col}{Column number for reference Ct.}
 }
 \description{
 This function allows me to take cleaned PCR Ct values of target genes,
     and returns with a fold change relevant to the reference gene for each target gene.
 }
 \details{
-blank.
+expfc uses the 2-ΔΔCT method to calculate fold change for relative gene expression
+    data obtained from real-time quantitative PCR. It returns a list of three objects: the
+    ΔCt values for control, the complete fold change table and a quick peek of common
+    statistics summary mean, median and sd.
+}
+\references{
+Livak KJ, Schmittgen TD. Analysis of relative gene expression data using real-time quantitative PCR and the 2- ΔΔCT method. Methods. Elsevier; 2001;25: 402–408.
 }
 \keyword{Ct}
 \keyword{delta}
