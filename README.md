@@ -3,6 +3,7 @@
 yzmiscf
 =======
 ![](https://img.shields.io/badge/personal-project-hotpink.svg?style=flat)
+<img src="man/figures/logo.png" align="right" height=140/>
 
 The goal of yzmiscf is to have an easy access to a list of functions I use daily.
 
