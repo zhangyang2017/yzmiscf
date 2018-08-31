@@ -18,5 +18,5 @@ devtools::install_github("zhangyang2017/yzmiscf")
 
 Contents
 ------------
-1. cleanme
-2. expfc
+001. cleanme
+002. expfc
