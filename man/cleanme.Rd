@@ -2,19 +2,20 @@
 % Please edit documentation in R/yzmiscf_functions.R
 \name{cleanme}
 \alias{cleanme}
-\title{A Miscellaneous Function}
+\title{001. de-multiplex technical replicates}
 \usage{
-cleanme(raw_data, clean_output)
+cleanme(.raw_data, ...)
 }
 \arguments{
-\item{raw_data}{##raw Ct values from PCR, duplicates or triplicates}
+\item{raw_data}{A tbl, preferably a .csv file with a proper header. Set column 1 as "id",
+column 2 as "variable", the rest columns can be raw Ct values for target genes.}
 }
 \description{
-This function allows you to take PCR raw Ct values of technical replicates,
-de-multiplicates each sample, and returns with a unique average Ct value for each biological sample.
+This function allows me to take PCR raw Ct values of technical replicates,
+    and returns with a unique average Ct value for each biological sample.
 }
-\examples{
-cleanme()
+\details{
+blank.
 }
 \keyword{data}
 \keyword{wrangling}

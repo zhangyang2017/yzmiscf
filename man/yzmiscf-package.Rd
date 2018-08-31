@@ -4,9 +4,9 @@
 \name{yzmiscf-package}
 \alias{yzmiscf}
 \alias{yzmiscf-package}
-\title{yzmiscf: Miscellaneous functions}
+\title{yzmiscf: a package of miscellaneous functions}
 \description{
-Miscellaneous functions.
+yzmiscf keeps track of a list of handy miscellaneous functions I use constantly.
 }
 \seealso{
 Useful links:

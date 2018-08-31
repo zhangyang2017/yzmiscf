@@ -110,3 +110,14 @@ col_names <- names(clean)[4:ncol(clean)]
 
 
 #'
+liver_raw <- read.csv("/Users/yangzhang/Box/yzmiscf/scratch/liver.csv")
+clean <- cleanme(liver_raw)
+
+
+plot.foldch <- function(expression){
+  ggplot(expression,
+         aes(x = treatment, y = col_name,
+             fill = treatment)) +
+    geom_boxplot() +
+    geom_jitter(width = 0.12)
+}
