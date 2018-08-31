@@ -8,6 +8,14 @@
 \description{
 Miscellaneous functions.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/zhangyang2017/yzmiscf}
+  \item Report bugs at \url{https://github.com/zhangyang2017/yzmiscf/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Yang Zhang \email{yang.yz.zhang@gmail.com}
 

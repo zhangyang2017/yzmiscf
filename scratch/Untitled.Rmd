@@ -1,0 +1,112 @@
+---
+title: "Untitled"
+author: "Yang Zhang"
+date: "8/29/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(here)
+library(yzmiscf)
+library(dplyr)
+library(ggplot2)
+```
+
+step 1: read in raw pcr table
+step 2: grep variable
+step 3: de-replication
+step 4: calculate fold change
+step 5: export as a new table
+step 6: make a plot.
+
+```{r}
+raw <- read.csv("/Users/yangzhang/Desktop/test.csv")
+## de-duplication(replication)
+varrr <- raw %>%
+  select(id, variable) %>%
+  distinct(id, .keep_all = TRUE)
+
+clean <- raw %>%
+  group_by(id) %>%
+  summarise_if(is.numeric, mean, na.rm = TRUE) %>%
+  mutate(treatment = varrr$variable)
+
+## calculate fold change using delta delta ct method
+control <- clean %>%
+  filter(treatment == "hfd")
+
+dct_ctr = mean(control$gene1_ct) - mean(control$ref_ct)
+
+
+expression <- clean %>%
+  mutate(dct = gene1_ct - ref_ct) %>%
+  mutate(ddct = dct - dct_ctr) %>%
+  mutate(fold = 2^(-ddct))
+
+ggplot(expression, aes(x = treatment, y = fold, fill = treatment)) +
+  geom_boxplot() +
+  geom_jitter(width = 0.15)
+```
+
+
+```{r}
+#path = here("scratch")
+liver_raw <- read.csv("/Users/yangzhang/Box/yzmiscf/scratch/liver.csv")
+
+vars <- liver_raw %>%
+  select(id, variable) %>%
+  distinct(id, .keep_all = TRUE)
+
+clean <- liver_raw %>%
+  group_by(id) %>%
+  summarise_if(is.numeric, mean, na.rm = TRUE) %>%
+  mutate(treatment = vars$variable) %>%
+  select(id, treatment, everything()) ## sort, put variables up front
+
+col_names <- names(clean)[3:ncol(clean)]
+
+control <- clean %>%
+  filter(treatment == "HFD")
+
+
+
+dCt <- dct_ctr(control)
+```
+#' @title A Miscellaneous Function
+#'
+#' @description This function allows you to take PCR raw data, clean it, calculate fold change, then export as a new table.
+#' @param genes Defaults.
+#' @keywords PCR
+#' @export
+#' @examples
+#' summ_stat()
+raw2 <- readCtData(files = "/Users/yangzhang/Desktop/YZ2861.txt", format = "CFX", n.features = 96)
+anova_sum <- function(genes, n) # n = row number
+{
+  output <- data.frame(matrix(ncol = 2, nrow = n))
+  x <- c("gene", "anova pvalue")
+  colnames(output) <- x
+  varnames = c(colnames(genes[3:42]))
+  list_fit <- list()
+  list_2 <- list()
+  for(i in 3:ncol(genes))
+  {
+    list_fit[[i]] <- aov(unlist(genes[i]) ~ unlist(genes[2]))
+    list_2[[i]] <- summary(list_fit[[i]])[[1]]$`Pr(>F)`[[1]]
+  }
+  output[,1] <- varnames
+  output[,2] <- unlist(list_2[3:42])
+  output
+}
+control <- clean %>%
+  filter(treatment == "HFD")
+
+col_names <- names(clean)[4:ncol(clean)]
+
+
+
+#'
