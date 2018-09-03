@@ -6,6 +6,8 @@
 \alias{yzmiscf-package}
 \title{yzmiscf: a package of miscellaneous functions}
 \description{
+\if{html}{\figure{logo.png}{options: align='right'}}
+
 yzmiscf keeps track of a list of handy miscellaneous functions I use constantly.
 }
 \seealso{
